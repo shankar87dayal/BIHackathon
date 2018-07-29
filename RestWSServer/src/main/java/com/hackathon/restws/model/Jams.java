@@ -1,14 +1,33 @@
 package com.hackathon.restws.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="Jams")
+@Entity
+@Table(name = "jams")
+
 public class Jams {
 	
+	@Id
+	@Column(name="id")
+	@GeneratedValue
 	private long id;
+	
+	@Column(name="wid")
 	private long wid;
+	
+	@Column(name="pid")
 	private long pid;
+	
+	@Column(name="remarks")
 	private String remarks;
+	
+	@Column(name="eid")
 	private String eId;
 
 	public long getId() {
